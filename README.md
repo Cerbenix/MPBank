@@ -1,64 +1,81 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# MPBank
 
-## About Laravel
+## Description
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+This is a bank simulation site using mainly Laravel 8 with some Alpine.js and TailwindCSS for the frontend.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Feature included:
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+1. User authentication, login with Google2FA, QR code available on profile page after registering.
+2. Account creation/deletion - debit or investment with a wide range of currencies.
+3. Account information pages - history, current investments etc.
+4. Ability to make transfers with 2 factor authentication.
+5. Currency conversion depending on receiver/sender account currencies. [Freecurrencyapi](https://coinmarketcap.com/api/documentation/v1/)
+6. Ability to purchase and sell investments from a long list of cryptocurrencies. [Coinmarketcap API](https://freecurrencyapi.com/docs)
 
-## Learning Laravel
+## Project Setup
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+#### Install
+``
+composer install
+``
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+``
+npm install
+``
 
-## Laravel Sponsors
+#### Setup .env file
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+``
+cp .env.example .env
+``
 
-### Premium Partners
+You will need to setup the database connection and add your own api keys.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+#### Create database
 
-## Contributing
+``
+php artisan migrate
+``
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+#### Run project locally
 
-## Code of Conduct
+``
+php artisan serv
+``
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+In case you want to make frontend changes open a new terminal and use
 
-## Security Vulnerabilities
+``
+npm run watch
+``
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+#### For additional project setup info
 
-## License
+[Here](https://devmarketer.io/learn/setup-laravel-project-cloned-github-com/) is a good step by step guide of setting up a cloned laravel project.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Take a look
+
+### Register/Login
+![image](https://github.com/Cerbenix/MPBank/assets/124684938/2add981f-e803-437b-a5d7-552fa32718c7)
+
+![image](https://github.com/Cerbenix/MPBank/assets/124684938/c4701885-6a4e-4b80-b3cd-452385c53edf)
+
+### Account list
+![image](https://github.com/Cerbenix/MPBank/assets/124684938/969f6240-f9b8-488e-8402-2543470e2253)
+
+### Account info
+![image](https://github.com/Cerbenix/MPBank/assets/124684938/ca0ab880-da39-44a4-92c9-37d832380488)
+
+### Transfer form
+![image](https://github.com/Cerbenix/MPBank/assets/124684938/1c5b5ad6-212e-42ef-bd45-c1ce37391de5)
+
+### Investment options
+![image](https://github.com/Cerbenix/MPBank/assets/124684938/d0a7e9a2-8834-4a45-abc9-e089c7590a1c)
+
+### Investment purchase
+![image](https://github.com/Cerbenix/MPBank/assets/124684938/f7ad775a-5f34-492a-9e09-50af0b4bec4f)
+
+
